@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>General Stores Items Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" 
+    crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+    crossorigin="anonymous"></script> 
+</head>
+<body class="bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+          <div class="container-fluid">
+             <a class="navbar-brand" href="#">General Stores Items Dashboard</a>
+         </div>
+    </nav>
+<main class="container py-4">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+      <div class="card shadow-sm">
+      <div class="card-body">
+      <h5 class="card-title">Add Items to Inventry</h5>
+
+<form onsubmit="handleFormSubmit(event)" id="items-form">
+    <div class="mb-3">
+           <label for="itemName" class="form-label">Item Name</label>
+           <input type="text" id="itemName" class="form-control" placeholder="eg.Redlabel tea,Colgate paste." name="itemName" required>
+    </div>
+    <div class="mb-3">
+           <label for="description" class="form-label">Description</label>
+           <input type="text" id="description" class="form-control" placeholder="eg.Tea powder,Tooth paste" name="description" required>
+    </div>
+    <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <select id="category" name="category" class="form-select" required>
+            <option value="">-- Choose category --</option>
+            <option>Staples(Atta, Dal, Rice, Sugar, Oil)</option>
+            <option>Snacks & Biscuits</option>
+            <option>Sweets & Chocolates</option>
+            <option>Beverages</option>
+            <option>Personal Care</option>
+            <option>Home Care/Cleaning Supplies</option>
+            <option>Stationery & Office Supplies</option>
+            <option>Baby & Kids Essentials</option>
+            <option>Grains, Spices & Masalas</option>
+            <option>Ready-to-Cook/Packaged Foods</option>
+            <option>Kitchen & Household Items</option>
+            <option>Miscellaneous Items</option>
+        </select>
+    </div>
+    <div class="mb-3">
+            <label for="price" class="form-label">Price/Unit</label>
+            <input type="number" min="0" step="0.01" id="amount" placeholder="Enter Price"  name="price" required>
+    </div>
+    <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" min="0" step="1" id="quantity" placeholder="Enter Quantity"  name="quantity" required>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="submit" id="add-btn" class="btn btn-success">Add Items</button>
+    </div>
+</form>
+</div>
+</div>
+
+<div class="card mt-4 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">List of Items In Inventory</h5>
+
+<!-- Label Row -->
+<div class="row fw-bold border-bottom py-2">
+    <div class="col-2">ITEM NAME</div>
+    <div class="col-3">DESCRIPTION</div>
+    <div class="col-3">CATEGORY</div>
+    <div class="col-2">PRICE</div>
+    <div class="col-1">QTY</div>
+    <div class="col-1 text-end">BUY</div>
+</div>
+
+<ul class="list-group list-group-flush" id="items-list">
+<!-- Items injected here -->
+</ul>
+</div>
+</div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+<script src="script.js"></script>
+</main>
+</body>
+</html>
