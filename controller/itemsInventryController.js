@@ -1,9 +1,9 @@
-const ItemsInventry=require('../models/itemsInventry');
+const ItemsInventory=require('../models/itemsInventry');
 
 const addItems= async (req,res)=>{
     try {
         const {itemName,description,category,price,quantity}=req.body;
-        const items= await ItemsInventry.create({
+        const items= await ItemsInventory.create({
             itemName:itemName,
             description:description,
             category:category,
@@ -19,7 +19,7 @@ const addItems= async (req,res)=>{
 
 const getAllItemsInInventry= async (req,res)=>{
     try {
-    const items= await ItemsInventry.findAll();
+    const items= await ItemsInventory.findAll();
     console.log("Fetching all Inventry");
     res.status(200).json(items);   
     } catch (error) {
@@ -32,7 +32,7 @@ const currentQty= async (req,res)=>{
     const itemId = req.params.id;
     const { quantity } = req.body;
 
-    const item = await ItemsInventry.update(
+    const item = await ItemsInventory.update(
       { quantity: quantity },
       { where: { id: itemId } }
     );

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>General Stores Items Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Store Management Dashboard</h1>
+    
+        <form onsubmit="handleFormSubmit(event)">
+        <div>
+        <label for="itemName">Item Name</label>
+        <input type="text" id="itemName" name="itemName" placeholder="eg.Layes chips,RedLabel tea etc." required>
+        </div>   
+        
+        <div>
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" placeholder="eg.Tea powder,oil etc." required>
+        </div>
+        
+        <div>
+        <label for="category">Category</label>
+        <select id="category" name="category" required>
+            <option value="">-- Choose category --</option>
+            <option>Food & Grocery Essentials</option>
+            <option>Snacks & Biscuits</option>
+            <option>Sweets & Chocolates</option>
+            <option>Beverages</option>
+            <option>Personal Care</option>
+            <option>Home Care/Cleaning Supplies</option>
+            <option>Stationery & Office Supplies</option>
+            <option>Baby & Kids Essentials</option>
+            <option>Grains, Spices & Masalas</option>
+            <option>Ready-to-Cook/Packaged Foods</option>
+            <option>Kitchen & Household Items</option>
+            <option>Miscellaneous Items</option>
+        </select>
+        </div>
+
+        <div>
+        <label for="price">Price/Unit</label>
+        <input type="number" min="0" step="0.01" id="price" name="price" placeholder="Enter Price" required>
+        </div>
+        
+        <div>
+        <label for="quantity">Quantity</label>
+        <input type="number" min="0" step="1" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+        </div>
+        <div class="grid-btn">
+            <button type="submit" id="add-item">Add Item</button>
+        </div>
+    </form>
+
+<h5>INVENTORY ITEM LIST</h5>
+    
+<div class="items-header">
+    <div>ITEM NAME</div>
+    <div>DESCRIPTION</div>
+    <div>CATEGORY</div>
+    <div>PRICE</div>
+    <div>QTY</div>
+    <div>BUY</div>
+</div>
+    
+<ul id="items-list">
+<!--items are injected here-->
+</ul>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"></script>
+<script src="index2.js"></script>
+</body>
+</html>
